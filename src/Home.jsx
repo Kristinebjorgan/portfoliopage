@@ -36,7 +36,19 @@ export default function Home() {
         </div>
 
         {/* arrow */}
-        <div className="mt-4 text-green/40">
+        <button
+          onClick={() => {
+            const target = document.getElementById("grid");
+            if (target) {
+              const top = target.offsetTop;
+              window.scrollTo({
+                top,
+                behavior: "smooth",
+              });
+            }
+          }}
+          className="mt-4 text-green/40"
+        >
           <svg
             className="w-4 h-4"
             fill="none"
@@ -50,11 +62,11 @@ export default function Home() {
               d="M19 9l-7 7-7-7"
             />
           </svg>
-        </div>
+        </button>
       </div>
 
       {/* Category Grid */}
-      <div className="h-screen flex items-center justify-center">
+      <div className="h-screen flex items-center justify-center" id="grid">
         <section className="w-full min-h-screen py-32 px-8 md:px-24 flex justify-center">
           <div className="w-full max-w-5xl grid grid-cols-12 grid-rows-4 gap-4 text-green">
             {/* Projects */}
