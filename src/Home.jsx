@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Home() {
   const [fade, setFade] = useState(1);
@@ -56,32 +58,44 @@ export default function Home() {
         <section className="w-full min-h-screen py-32 px-8 md:px-24 flex justify-center">
           <div className="w-full max-w-5xl grid grid-cols-12 grid-rows-4 gap-4 text-green">
             {/* Projects */}
-            <div className="col-span-5 row-span-3 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02]">
-              <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-200 ease-in-out text-lg font-light">
+            <Link
+              to="/projects"
+              className="col-span-5 row-span-3 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02]"
+            >
+              <div className="absolute inset-0 flex items-center justify-center opacity-25 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-100 ease-in-out text-lg font-light">
                 projects
               </div>
-            </div>
+            </Link>
 
             {/* Papers */}
-            <div className="col-span-7 row-span-2 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02] delay-200">
-              <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-200 ease-in-out text-base font-light">
+            <Link
+              to="/papers"
+              className="col-span-7 row-span-2 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02] delay-200"
+            >
+              <div className="absolute inset-0 flex items-center justify-center opacity-25 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-100 ease-in-out text-base font-light">
                 papers
               </div>
-            </div>
+            </Link>
 
             {/* About */}
-            <div className="col-start-6 col-span-7 row-span-1 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02] delay-300">
-              <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-200 ease-in-out text-sm font-light">
+            <Link
+              to="/about"
+              className="col-start-6 col-span-7 row-span-1 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02] delay-300"
+            >
+              <div className="absolute inset-0 flex items-center justify-center opacity-25 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-100 ease-in-out text-sm font-light">
                 about
               </div>
-            </div>
+            </Link>
 
-            {/* currently */}
-            <div className="col-span-12 row-span-1 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02] delay-500">
-              <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-200 ease-in-out text-base font-light">
+            {/* Currently */}
+            <Link
+              to="/currently"
+              className="col-span-12 row-span-1 group relative bg-transparent transition-all duration-200 ease-in-out hover:bg-green/30 hover:scale-[1.02] delay-500"
+            >
+              <div className="absolute inset-0 flex items-center justify-center opacity-25 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-100 ease-in-out text-base font-light">
                 currently
               </div>
-            </div>
+            </Link>
           </div>
         </section>
       </div>
