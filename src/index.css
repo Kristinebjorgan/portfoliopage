@@ -5,3 +5,21 @@
 body {
   @apply bg-offwhite text-green font-grotesk;
 }
+
+@layer utilities {
+  .img-group-tall {
+    @apply grid sm:grid-cols-2 gap-4;
+  }
+
+  .img-group-wide {
+    @apply flex flex-col gap-4;
+  }
+
+  .project-img-container {
+    @apply w-full h-72 sm:h-96 overflow-hidden rounded border border-green/20;
+  }
+
+  .project-img {
+    @apply w-full h-full object-cover;
+  }
+}

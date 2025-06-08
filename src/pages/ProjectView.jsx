@@ -110,21 +110,39 @@ export default function ProjectView() {
           )}
         </div>
 
+        {project.comment && (
+          <p className="text-sm italic text-green/60 mt-2">
+            “{project.comment}”
+          </p>
+        )}
+
         {/* Images */}
         {project.images?.length > 0 && (
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {project.images.map((src, i) => (
-              <div
-                key={i}
-                className="w-full overflow-hidden rounded border border-green/20 shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
-                <img
-                  src={src}
-                  alt={`Screenshot ${i + 1}`}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            ))}
+          <div className="mt-10">
+            <div id="image-container" className="gap-4">
+              {project.images.slice(0, 2).map((src, i) => (
+                <div
+                  key={i}
+                  className="project-img-container hover:shadow-md transition-shadow duration-200"
+                >
+                  <img
+                    src={src}
+                    alt={`Screenshot ${i + 1}`}
+                    className="project-img"
+                    onLoad={(e) => {
+                      if (i === 0) {
+                        const ratio =
+                          e.target.naturalHeight / e.target.naturalWidth;
+                        const container =
+                          document.getElementById("image-container");
+                        container.className =
+                          ratio > 1 ? "img-group-tall" : "img-group-wide";
+                      }
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         )}
 

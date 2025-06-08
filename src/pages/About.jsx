@@ -26,7 +26,7 @@ return (
       </svg>
     </button>
 
-    {/* Main content box */}
+    {/* Main content */}
     <div className="bg-gold/20 w-full max-w-4xl p-8 md:p-10 text-sm font-light tracking-wide leading-loose shadow-md transition-shadow duration-300">
       <div className="space-y-5">
         <p>
@@ -63,14 +63,22 @@ return (
         </p>
       </div>
 
-      <div className="mt-8 text-sm text-green/70 hover:text-green transition-colors duration-200">
+      {/* links */}
+
+      <div className="mt-8 text-sm flex gap-6 text-green/70">
         <a
           href="https://github.com/Kristinebjorgan"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline underline-offset-2"
+          className="hover:text-green hover:underline underline-offset-2 transition-colors duration-200"
         >
           github
+        </a>
+        <a
+          href="mailto:enit_sirkel@proton.me"
+          className="hover:text-green hover:underline underline-offset-2 transition-colors duration-200"
+        >
+          email
         </a>
       </div>
     </div>

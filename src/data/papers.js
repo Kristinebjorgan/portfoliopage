@@ -12,6 +12,8 @@ const papers = [
     files: {
       en: "/papers/blockchain.pdf",
     },
+    comment:
+      "Researching Ronin as a potential blueprint for play-to-earn platforms turned out to be one of the most exciting projects I’ve worked on, it truly opened up a whole new perspective on blockchain's role in digital economies.",
     feedback: {
       quote: "",
       source: "",
@@ -31,9 +33,11 @@ const papers = [
       no: "/papers/knowledge.pdf",
       en: "/papers/english-knowledge.pdf",
     },
+    comment: "This was one of the most intellectually thrilling projects I’ve worked on! I got to explore how we conserve knowledge in group projects, and it led me deep into the mechanics of memory, collaboration, and shared understanding.",
     feedback: {
       no: {
-        quote: "Kandidaten leverer en svært solid del 1 med Gantt-skjema, milepælsplan med ansvarskart og resultatløp og et fint prosjektmandat. En svært spennende problemstilling som burde være mye mer sentral i all prosjektarbeid. Kandidaten leverer en svært god og teoretisk velfundert del 2. Kanskje blir det vel mye fokus på teori framfor konkrete eksempler som demonstrerer praktisk anvendelse av teori, men et godt og relevant intervju trekker opp. I sum er dette en velskrevet og grundig besvarelse som dokumenterer modenhet og god faglig innsikt. Men studenten kunne ha skilt enda tydeligere mellom hva som er gjennomgang/presentasjon av fagstoff, hva som er funn/resultater/data, og hva som er konkret oppsummering/konklusjon/anbefalinger. Studenten hadde tjent på å følge malen for eksamen på en klarere måte. Stor grad av selvstendighet og svært god vurderingsevne. Forbilledlig føring av kilder og referanser og en enorm referanseliste.",
+        quote:
+          "Kandidaten leverer en svært solid del 1 med Gantt-skjema, milepælsplan med ansvarskart og resultatløp og et fint prosjektmandat. En svært spennende problemstilling som burde være mye mer sentral i all prosjektarbeid. Kandidaten leverer en svært god og teoretisk velfundert del 2. Kanskje blir det vel mye fokus på teori framfor konkrete eksempler som demonstrerer praktisk anvendelse av teori, men et godt og relevant intervju trekker opp. I sum er dette en velskrevet og grundig besvarelse som dokumenterer modenhet og god faglig innsikt. Men studenten kunne ha skilt enda tydeligere mellom hva som er gjennomgang/presentasjon av fagstoff, hva som er funn/resultater/data, og hva som er konkret oppsummering/konklusjon/anbefalinger. Studenten hadde tjent på å følge malen for eksamen på en klarere måte. Stor grad av selvstendighet og svært god vurderingsevne. Forbilledlig føring av kilder og referanser og en enorm referanseliste.",
         source: "internal assessor",
       },
       en: {

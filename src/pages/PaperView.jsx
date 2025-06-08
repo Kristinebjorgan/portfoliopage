@@ -78,6 +78,12 @@ export default function PaperView() {
           </div>
         )}
 
+        {paper.comment && (
+          <p className="text-sm italic text-green/60 mt-2">
+            “{paper.comment}”
+          </p>
+        )}
+
         {/* PDF Preview */}
         <div className="mt-10 border border-green/20 rounded-lg shadow-md overflow-hidden bg-white">
           <div className="bg-gold/10 text-green text-sm font-light px-5 py-3 border-b border-green/10 tracking-wide">
