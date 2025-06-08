@@ -55,10 +55,11 @@ return (
           reflects my commitment to decentralized tools that empower.
         </p>
         <p>
-          This portfolio reflects my evolving philosophy on design, technology,
-          decentralization and the future of the web. I move between idealism
-          and execution, always building with purpose, clarity, and with a solid
-          belief in a more intelligent, equal and humancentered internet-world.
+          This portfolio is a testament of my evolving philosophy on design,
+          technology, decentralization and future of web. I move between
+          idealism and execution, always building with purpose, clarity, and
+          with a unwavering belief in a more intelligent, equal and
+          humancentered internet-world.
         </p>
       </div>
 

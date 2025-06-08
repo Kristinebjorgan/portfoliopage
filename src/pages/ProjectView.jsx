@@ -60,7 +60,7 @@ export default function ProjectView() {
             <p>
               {project.tags.map((tag, i) => (
                 <span key={i} className="mr-2">
-                  #{tag}
+                  {tag}
                 </span>
               ))}
             </p>
@@ -114,12 +114,16 @@ export default function ProjectView() {
         {project.images?.length > 0 && (
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {project.images.map((src, i) => (
-              <img
+              <div
                 key={i}
-                src={src}
-                alt={`Screenshot ${i + 1}`}
-                className="rounded border border-green/20 shadow-sm hover:shadow-md transition-shadow duration-200"
-              />
+                className="w-full overflow-hidden rounded border border-green/20 shadow-sm hover:shadow-md transition-shadow duration-200"
+              >
+                <img
+                  src={src}
+                  alt={`Screenshot ${i + 1}`}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             ))}
           </div>
         )}
