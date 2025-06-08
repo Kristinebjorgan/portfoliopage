@@ -2,14 +2,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import papers from "../data/papers";
 
-
 export default function PaperView() {
   const { id } = useParams();
   const navigate = useNavigate();
   const paper = papers.find((p) => p.id === id);
   const availableLangs = Object.keys(paper?.files || {});
   const [lang, setLang] = useState(availableLangs[0] || "en");
-  const [numPages, setNumPages] = useState(null);
 
   if (!paper) {
     return (
@@ -52,7 +50,14 @@ export default function PaperView() {
       <div className="max-w-4xl mx-auto space-y-4">
         <h1 className="text-xl font-light">{paper.title}</h1>
         <p className="text-sm opacity-70">{paper.subtitle}</p>
-        <p className="text-sm leading-relaxed mt-4">{paper.description}</p>
+        <p className="text-sm leading-relaxed">{paper.description}</p>
+
+        {/* Meta */}
+        <div className="text-sm text-green/50 mt-2 space-y-1">
+          {paper.type && <p>Type: {paper.type}</p>}
+          {paper.year && <p>Year: {paper.year}</p>}
+          {paper.grade && <p>Grade: {paper.grade}</p>}
+        </div>
 
         {/* Language selector */}
         {availableLangs.length > 1 && (
@@ -73,22 +78,30 @@ export default function PaperView() {
           </div>
         )}
 
-<div className="mt-10 border border-green/20 rounded-lg shadow-md overflow-hidden bg-white">
-  {/* Preview header */}
-  <div className="bg-gold/10 text-green text-sm font-light px-5 py-3 border-b border-green/10 tracking-wide">
-    Preview (PDF)
-  </div>
+        {/* PDF Preview */}
+        <div className="mt-10 border border-green/20 rounded-lg shadow-md overflow-hidden bg-white">
+          <div className="bg-gold/10 text-green text-sm font-light px-5 py-3 border-b border-green/10 tracking-wide">
+            Preview (PDF)
+          </div>
+          <div className="w-full h-[80vh]">
+            <embed
+              src={paper.files?.[lang]}
+              type="application/pdf"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
 
-  {/* PDF preview */}
-  <div className="w-full h-[80vh]">
-    <embed
-      src={paper.files?.[lang]}
-      type="application/pdf"
-      className="w-full h-full"
-    />
-  </div>
-    </div>
-    </div>
+        {/* Feedback */}
+        {paper.feedback?.[lang]?.quote && paper.feedback?.[lang]?.source && (
+          <blockquote className="border-l-2 border-green pl-4 italic text-sm text-green/70 mt-8">
+            “{paper.feedback[lang].quote}”
+            <span className="block not-italic font-light mt-1">
+              – {paper.feedback[lang].source}
+            </span>
+          </blockquote>
+        )}
+      </div>
     </div>
   );
 }

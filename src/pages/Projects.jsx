@@ -1,5 +1,7 @@
 import projects from "../data/projects";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 export default function Projects() {
@@ -31,16 +33,16 @@ export default function Projects() {
       {/* project grid */}
       <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <a
+          <Link
             key={project.id}
-            href={project.link}
+            to={`/projects/${project.id}`}
             className="group relative bg-transparent hover:bg-gold/30 transition-all duration-200 hover:scale-[1.01] min-h-[180px] flex items-center justify-center text-center"
           >
             <div className="opacity-25 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-200 ease-in-out px-4">
               <h2 className="text-base font-light">{project.title}</h2>
               <p className="text-xs opacity-60 mt-1">{project.subtitle}</p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
